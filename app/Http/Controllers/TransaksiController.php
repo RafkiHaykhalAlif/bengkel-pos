@@ -47,7 +47,7 @@ class TransaksiController extends Controller {
         }
 
         DB::beginTransaction();
-        $batchUuid = ActivityLogger::newBatch(); // ── Generate batch UUID ──
+        $batchUuid = ActivityLogger::newBatch(); 
         try {
             $prefix = 'TRX-' . Carbon::now()->format('Ymd') . '-';
             $last   = Transaksi::where('no_transaksi', 'like', $prefix . '%')
@@ -180,7 +180,7 @@ class TransaksiController extends Controller {
         ]);
 
         DB::beginTransaction();
-        $batchUuid = ActivityLogger::newBatch(); // ── Generate batch UUID retur ──
+        $batchUuid = ActivityLogger::newBatch(); 
         try {
             $transaksi = Transaksi::findOrFail($request->transaksi_id);
 

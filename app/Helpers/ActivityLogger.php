@@ -33,7 +33,7 @@ class ActivityLogger
                 'updated_at'   => now(),
             ]);
         } catch (\Exception $e) {
-            // Silent fail — jangan sampai log error merusak transaksi
+            
         }
     }
 

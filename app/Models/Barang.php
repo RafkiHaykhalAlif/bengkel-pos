@@ -27,7 +27,7 @@ class Barang extends Model {
         static::updated(function ($barang) {
             $dirty = $barang->getDirty();
             $original = array_intersect_key($barang->getOriginal(), $dirty);
-            // Jangan log kalau hanya stok yang berubah dari transaksi (sudah dilog di controller)
+            
             $nonStokDirty = array_diff_key($dirty, ['stok' => true]);
             if (!empty($nonStokDirty)) {
                 ActivityLogger::log(
